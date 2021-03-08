@@ -1,38 +1,342 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  min-height: 100vh;
+}
+header {
+  font-size: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+p {
+  text-align: center;
+}
+a {
+  text-align: center;
+}
+.countdown-holder {
+  width: 70%;
+  background: #fff;
+  margin: 35px auto;
+  position: relative;
+  border-radius: 10px;
+}
+.Countdown {
+  padding: 30px 0px;
+  text-align: center;
+}
+.Countdown-header {
+  font-size: 30px;
+  font-weight: 300;
+  color: black;
+}
+.Stopwatch-header {
+  font-size: 30px;
+  font-weight: 300;
+  color: black;
+}
+.Countdown-display {
+  padding: 20px 0px;
+  text-align: center;
+}
+.Countdown-display button {
+  background: #8fbc8f;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  width: 150px;
+  transition: background 0.3s;
+  cursor: pointer;
+  color: #fff;
+}
+.Countdown-label {
+  font-size: 18px;
+  margin-top: 10px;
+  color: black;
+}
+.Countdown-time {
+  font-size: 36px;
+  margin: 5px 0;
+  color: black;
+}
+.Button-start {
+  background: #fff;
+  margin-top: 30px;
+  margin-left: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 150px;
+  transition: background 0.3s;
+  cursor: pointer;
+  border: 2px solid #2e8b57;
+  color: #2e8b57;
+}
+.Button-stop {
+  background: #fff;
+  margin-top: 30px;
+  margin-left: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 150px;
+  transition: background 0.3s;
+  cursor: pointer;
+  border: 2px solid #b22222;
+  color: #b22222;
+}
+.Button-resume {
+  background: #fff;
+  margin-top: 30px;
+  margin-left: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 150px;
+  transition: background 0.3s;
+  cursor: pointer;
+  border: 2px solid #cd853f;
+  color: #cd853f;
+}
+.Button-reset {
+  background: #fff;
+  margin-top: 30px;
+  margin-left: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 150px;
+  transition: background 0.3s;
+  cursor: pointer;
+  border: 2px solid #87cefa;
+  color: #87cefa;
+}
+.Button-start:hover {
+  background: #2e8b57;
+  border: 2px solid #2e8b57;
+  color: #fff;
+}
+.Button-stop:hover {
+  background: #b22222;
+  border: 2px solid #b22222;
+  color: #fff;
+}
+.Button-reset:hover {
+  background: #87cefa;
+  border: 2px solid #87cefa;
+  color: #fff;
+}
+.Button-resume:hover {
+  background: #cd853f;
+  border: 2px solid #cd853f;
+  color: #fff;
+}
+
+.stopwatch-holder {
+  width: 70%;
+  background: #fff;
+  margin: 25px auto;
+  position: relative;
+  border-radius: 10px;
+}
+
+.stopwatch {
+  padding: 30px 0px;
+  text-align: center;
+}
+.stopwatch span {
+  background: #8fbc8f;
+  color: #fff;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 26px;
+  padding: 20px;
+  border-radius: 5px;
+  width: 75px;
+  margin-top: 10px;
+}
+
+.stopwatch .stopwatch-btn {
+  background: #fff;
+  margin-top: 30px;
+  margin-left: 5px;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 150px;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.stopwatch .stopwatch-btn-red {
+  border: 2px solid #b22222;
+  color: #b22222;
+}
+
+.stopwatch .stopwatch-btn-yel {
+  border: 2px solid #cd853f;
+  color: #cd853f;
+}
+
+.stopwatch .stopwatch-btn-gre {
+  border: 2px solid #2e8b57;
+  color: #2e8b57;
+}
+
+.stopwatch .stopwatch-btn-red:hover {
+  background: #b22222;
+  border: 2px solid #b22222;
+  color: #fff;
+}
+
+.stopwatch .stopwatch-btn-yel:hover {
+  background: #cd853f;
+  border: 2px solid #cd853f;
+  color: #fff;
+}
+
+.stopwatch .stopwatch-btn-gre:hover {
+  background: #2e8b57;
+  border: 2px solid #2e8b57;
+  color: #fff;
+}
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+form button {
+  color: #ff6f47;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: #ff6f47;
+  color: white;
+}
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+.filter-todo {
+  padding: 1rem;
+}
+.todo li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  background: #ff6f47;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.complete-btn {
+  background: rgb(11, 212, 162);
+}
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
-.App-link {
-  color: #61dafb;
+/*CUSTOM SELECTOR */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Custom Select */
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
 }
+select {
+  color: #ff6f47;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #ff6f47;
+  cursor: pointer;
+  pointer-events: none;
+}
+/* Transition */
+/*
+.select:hover::after {
+  transform: scale(1.5);
+}
+*/
